@@ -16,11 +16,18 @@ describe ProjectsController do
 			sign_in(user)
 		end
 
-		it "cannot access the new action" do 
-			get :new
+		{ new: :get, 
+			create: :post, 
+			edit: :get, 
+			update: :put, 
+			destroy: :delete}.each do |action, method|				
 
-			expect(response).to redirect_to('/')
+		it "cannot access the new #{action} action" do 
+			sign_in(user)
+			send(method, action, :id => FactoryGirl.create(:project))
+			expect(response).to redirect_to(root_path)
 			expect(flash[:alert]).to eql("You must be an admin to do that")
 		end
+	  end
 	end
 end
