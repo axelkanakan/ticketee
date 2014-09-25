@@ -1,9 +1,26 @@
 require 'spec_helper'
 
 describe User do 
+
+	describe "emails" do 
+		it "requires an email" do 
+			u = User.new(name: "steve", password: "hunter2", password_confirmation: "hunter2")
+			u.save
+			expect(u).to_not be_valid
+
+			u.email = "steve@example.com"
+			u.save
+			expect(u).to be_valid
+		end
+	end
+
+
+
+
+
 	describe "passwords" do 
 		it "needs a password and confirmation to save" do 
-			u = User.new(name: "steve")
+			u = User.new(name: "steve", email: "steve@example.com")
 
 			u.save
 			expect(u).to_not be_valid
@@ -21,6 +38,7 @@ describe User do
 		it "needs password and confirmation to match" do 
 			u = User.create(
 				name: "steve", 
+				email: "steve@example.com",
 				password: "hunter2",
 				password_confirmation: "hunter")
 			expect(u).to_not be_valid
@@ -30,6 +48,7 @@ describe User do
 	describe "authentication" do 
 		let(:user) { User.create(
 			name: "steve", 
+			email: "steve@example.com",
 			password: "hunter2",
 			password_confirmation: "hunter2")}
 
