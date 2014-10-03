@@ -27,7 +27,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
- gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -46,3 +46,5 @@ group :test do
 	gem 'capybara', "2.1.0"
 	gem 'factory_girl_rails', '~> 4.2.1'
 end
+
+gem 'cancan', '~>1.6.10'
