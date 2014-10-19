@@ -1,0 +1,2 @@
+The blink tag can blink faster if you use the speed = "hyper" attribute.
+HYFR is a song by Aubrey Graham containing a whole lot of profanity and bad behavior.

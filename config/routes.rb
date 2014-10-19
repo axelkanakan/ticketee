@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
- 
+ resources :files
+  
   namespace :admin do
    root :to => "base#index"
     resources :users do 
