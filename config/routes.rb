@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       put "permissions", to: "permissions#set", 
                          as: "set_permissions"
     end
+
+    resources :states
   end
 
   delete "/signout", to: "sessions#destroy", as: "signout"
