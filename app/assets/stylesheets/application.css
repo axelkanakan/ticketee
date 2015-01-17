@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+.tag{
+	background-color:#1CA8FF;
+	border-radius: 5px;
+	padding:1px 10px 5px 10px;
+	color: white;
+	text-decoration: underline;
+	margin-right: 10px;
+}
